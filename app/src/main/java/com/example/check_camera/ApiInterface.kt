@@ -6,15 +6,13 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.Part
+import retrofit2.http.*
 
 interface ApiInterface {
     @Multipart
     @POST("post")
     fun getpost(
+        @Header("token") token : String,
         @Part("name") name: RequestBody,
         @Part("mobile") mobile : RequestBody,
         @Part("email") emailid : RequestBody,
@@ -26,14 +24,14 @@ interface ApiInterface {
 
         var BASE_URL = "http://172.20.3.87/daily_visit/test/"
 
-        fun create() : ApiInterface {
+
 
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build()
-            return retrofit.create(ApiInterface::class.java)
+           // return retrofit.create(ApiInterface::class.java)
 
-        }
+
     }
 }

@@ -26,4 +26,12 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/ic_launcher_background"/>
 
+    <Button
+        android:id="@+id/upload"
+        android:layout_marginTop="50dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="upload"/>
+
 </LinearLayout>
